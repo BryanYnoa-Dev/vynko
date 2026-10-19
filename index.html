@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vynko | Inicio</title>
+
+    <!-- Conectamos nuestro archivo CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navegación principal -->
+    <header class="site-header">
+        
+        <nav aria-label="Navegación principal">
+         <button id="theme-toggle" class="theme-button" type="button">
+            Cambiar tema
+         </button>
+            <a href="index.html">Vynko</a>
+            <a href="#feed">Inicio</a>
+            <a href="#profile">Mi perfil</a>
+        </nav>
+    </header>
+
+    <main class="layout">
+
+        <!-- Feed de publicaciones -->
+        <section id="feed" class="feed">
+
+            <h1>Inicio</h1>
+
+            <article class="post">
+
+                <header class="post-header">
+                    <div class="avatar">B</div>
+
+                    <div>
+                        <h2>Bryan Ynoa</h2>
+                        <p>@bryan</p>
+                    </div>
+                </header>
+
+                <p>
+                    ¡Mi primera publicación en Vynko!
+                    Estoy aprendiendo desarrollo web.
+                </p>
+
+                <footer class="post-footer">
+                    <span>♡ 0 likes</span>
+                    <span>0 comentarios</span>
+                </footer>
+
+            </article>
+
+            <article class ="post">
+                <header class="post-header">
+                    <div class="avatar">J</div>
+
+                    <div>
+                        <h2>Junior Carpenter</h2>
+                        <p>@junior</p>
+                    </div>
+                </header>
+                <p>Hola me encuentro en Vynko!!!</p>
+                <footer class="post-footer">
+                    <span>♡ 3 likes</span>
+                    <span>0 comentarios</span>
+                </footer>
+            </article>
+        </section>
+
+        <!-- Perfil del usuario -->
+        <aside id="profile" class="profile">
+
+            <div class="avatar">B</div>
+
+            <h2>Bryan Ynoa</h2>
+
+            <p>Aprendiendo desarrollo Full Stack.</p>
+
+            <h3>Mis intereses</h3>
+
+            <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Node.js</li>
+            </ul>
+
+        </aside>
+
+    </main>
+<script src="js/app.js"></script>
+</body>
+</html>
