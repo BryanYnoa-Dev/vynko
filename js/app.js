@@ -14,3 +14,32 @@ themeButton.addEventListener("click", () => {
     }
 
 });
+
+
+const posts = document.querySelectorAll(".post");
+
+posts.forEach((post) => {
+
+    const likeButton = post.querySelector(".like-button");
+    const likeCount = post.querySelector(".like-count");
+
+    likeButton.addEventListener("click", () => {
+
+        const isLiked = likeButton.classList.toggle("liked");
+
+        let likes = Number(likeCount.textContent);
+
+        if (isLiked) {
+            likes++;
+        } else {
+            likes--;
+        }
+
+        likeCount.textContent = likes;
+
+        likeButton.setAttribute(
+            "aria-pressed",
+            String(isLiked)
+        );
+    });
+});
