@@ -1,0 +1,99 @@
+
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Vynko API",
+    "description": "API de la red social Vynko",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/posts": {
+  "post": {
+    "summary": "Create a Post",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          },
+          "example": {
+            "user_id": "",
+            "content": "Hola desde Swagger"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Post created Succesfully"
+      },
+      "400":{
+        "description": "Invalid resquest data"
+      }
+    }
+  },
+  "get": {
+
+        "summary": "Get All Posts",
+        "parameters": [{
+          "name": "user_id",
+          "in": "query",
+          "required": false,
+          "description": "Filter Posts By user UUID",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }],
+        
+        "responses": {
+          "200": {
+            "description": "List of Posts Pulled Succesfully"
+          }
+        }
+      }
+    
+},
+    "/users": {
+      "get": {
+        "summary": "Obtener todos los usuarios",
+        "parameters": [
+          {
+            "name" : "id",
+            "in": "query",
+            "required": false,
+            "description": "User's UUID",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de usuarios obtenida correctamente"
+          },
+          "404":{
+            "description": "User not found"
+          }
+        }
+      }
+    }
+    
+  }
+}
