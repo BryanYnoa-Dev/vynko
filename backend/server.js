@@ -136,14 +136,26 @@ if (req.method === "GET" && req.url === "/"){
     
     res.statusCode = HTTP_STATUS.OK;
     res.end("Welcome to Vynko's API");
+    return;
 }
 else if (usersRouter.handle(req,res,url)){
 return;
 }
 
-if(postsRouter.handle(req,res, url)){
+else if(postsRouter.handle(req,res, url)){
   return;
 }
+
+else {
+    res.statusCode = HTTP_STATUS.NOT_FOUND;
+    res.setHeader("Content-Type", "application/json");
+
+    return res.end(JSON.stringify({
+        error: "Route not found"
+    }));
+}
+       
+
 
 });
 
